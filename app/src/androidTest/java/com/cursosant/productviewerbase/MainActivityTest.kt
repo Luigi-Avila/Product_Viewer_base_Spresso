@@ -1,5 +1,6 @@
 package com.cursosant.productviewerbase
 
+import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -29,5 +30,23 @@ class MainActivityTest{
 
         onView(withId(R.id.etNewQuantity))
             .check(matches(withText("2")))
+    }
+
+    @Test
+    fun setNewQuantity_Sum_TextFieldDoesNotIncrease(){
+        val scenario = activityRule.scenario
+        scenario.moveToState(Lifecycle.State.RESUMED)
+        scenario.onActivity { activity ->
+            activity.selectedProduct.quantity = 1
+        }
+
+        onView(withId(R.id.etNewQuantity))
+            .check(matches(withText("1")))
+
+        onView(withId(R.id.ibSum))
+            .perform(click())
+
+        onView(withId(R.id.etNewQuantity))
+            .check(matches(withText("1")))
     }
 }
