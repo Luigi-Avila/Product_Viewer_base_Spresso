@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Product Viewer base</string>
+    <string name="detail_add_to_cart">Añadir al carrito</string>
+    <string name="detail_quantity">Disponibles: %1$d</string>
+    <string name="detail_total_price">&lt;b>&lt;big>Total: $%1$.2f USD&lt;/big>&lt;/b>&lt;br/>(%2$d x $%3$.2f)</string>
+    <string name="main_message_product_added">%1$s añadido…</string>
+    <string name="description_new_quantity">cantidad</string>
+    <string name="description_image_product">Imagen del producto.</string>
+    <string name="description_new_quantity_alt">cantidad alterna</string>
+</resources>
