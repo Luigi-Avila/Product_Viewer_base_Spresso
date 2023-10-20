@@ -62,4 +62,16 @@ class MainActivityTest{
         onView(withId(R.id.etNewQuantity))
             .check(matches(withText("10")))
     }
+
+    @Test
+    fun setNewQuantity_Sub_limit_TextFieldDoesNotDecrease(){
+        onView(withId(R.id.etNewQuantity))
+            .check(matches(withText("1")))
+
+        onView(withId(R.id.ibSub))
+            .perform(click())
+
+        onView(withId(R.id.etNewQuantity))
+            .check(matches(withText("1")))
+    }
 }
