@@ -2,6 +2,7 @@ package com.cursosant.productviewerbase
 
 import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -48,5 +49,17 @@ class MainActivityTest{
 
         onView(withId(R.id.etNewQuantity))
             .check(matches(withText("1")))
+    }
+
+    @Test
+    fun setNewQuantity_Sub_TextFieldDecreases(){
+        onView(withId(R.id.etNewQuantity))
+            .perform(ViewActions.replaceText("11"))
+
+        onView(withId(R.id.ibSub))
+            .perform(click())
+
+        onView(withId(R.id.etNewQuantity))
+            .check(matches(withText("10")))
     }
 }
