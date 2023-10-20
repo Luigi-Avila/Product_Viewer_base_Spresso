@@ -39,6 +39,7 @@
             android:inputType="number"
             android:imeOptions="actionDone"
             android:contentDescription="@string/description_new_quantity_alt"
+            android:text="5"
             tools:text="5"/>
     </com.google.android.material.textfield.TextInputLayout>
 
